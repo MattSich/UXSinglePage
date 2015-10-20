@@ -1,0 +1,535 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
+
+$lightBlue: #00ACDE;
+$darkerGray: #808A8F;
+$lighterGray: #B5BCC1;
+$bgBlue: #384A57;
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  font-family: 'Roboto';
+  font-weight: 300;
+  background-color: $bgBlue;
+}
+$headerHeight: 80px;
+.header{
+  z-index: 100;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: $headerHeight;
+  background-color: rgba(255,255,255,0.9);
+  .mainLogo{
+    position: absolute;;
+    left: 20px;
+    top: 0px;
+    width: 100%;
+    height: $headerHeight;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto 65%;
+    background-image: url('../images/3pg-logo.png');
+
+  }
+  .mainNav{
+    width: 100%;
+    height: $headerHeight;
+    overflow: hidden;
+    .nav-button{
+      position: relative;
+      float: right;
+      color:$lightBlue;
+      font-weight: 700;
+      text-align: center;
+      padding: 30px 20px;
+      cursor: pointer;
+      box-shadow: inset 0px 0px 0 0px $lightBlue;
+      transition: box-shadow 0.3s ease,
+                  color 0.3s ease,
+                  background-color 0.3s ease;
+      &:hover{
+        box-shadow: inset 0px -5px 0 0px $lightBlue;
+      }
+
+      &.bordered-button{
+        border: solid 2px $lightBlue;
+        margin: 10px;
+        padding: 19px 25px;
+        &:hover{
+          box-shadow: none;
+          background-color: $lightBlue;
+          color: white;
+        }
+      }
+    }
+  }
+}
+.content{
+  width: 100%;
+  display: block;
+  margin: 0 auto 0;
+  position: relative;
+}
+.full-frame{
+  width: 100%;
+  height: 100vh;
+  display:block;
+  overflow: hidden;
+  position: relative;
+}
+.container{
+  width: 90%;
+  margin-left: 5%;
+}
+
+//FIRST full-frame
+.imageGrid{
+    width: 50%;
+    height: 50vh;
+    display: block;
+    overflow: hidden;
+    float: left;
+    &.ig-left{
+      .ig-lg, .ig-sm{
+        float: left;
+      }
+    }
+    &.ig-right{
+      .ig-lg, .ig-sm{
+        float: right;
+      }
+    }
+    .ig-lg, .ig-sm{
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      box-shadow: 0px 0px 0 1px $darkerGray;
+
+      &.hover-info{
+        transition: filter 0.3s ease;
+        &:hover{
+          -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+        }
+      }
+    }
+  .ig-lg{
+    width: 67%;
+    height: 50vh;
+  }
+  .ig-sm{
+    width: 33%;
+    height: 25vh;
+  }
+}
+
+.jumboMessage{
+  width: 66.5%;
+  position: absolute;
+  right: 0;
+  top: 50vh;
+  transform: translateY(-50%);
+  margin: auto;
+  background-color: $bgBlue;
+  min-height: 50vh;
+  color: white;
+  font-weight: 400;
+  overflow: hidden;
+  display: block;
+
+  .jm-sub-title{
+    font-size: 30px;
+    margin: 35px 0px 30px 0px;
+  }
+  .jm-title{
+    font-size: 60px;
+    font-weight: 700;
+  }
+  .text-highlight{
+    background-color: $darkerGray;
+  }
+  .jm-message{
+    font-size: 24px;
+    margin: 20px 0px;
+  }
+  .jm-button{
+    background-color: $lightBlue;
+    text-align: center;
+    font-weight: 700;
+    padding: 15px 25px;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 24px;
+    margin: 10px 0px;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    &:hover{
+      opacity: 0.7;
+    }
+  }
+
+}
+
+//Text Frame
+
+.text-frame{
+  width: 100%;
+  background-color: $bgBlue;
+  padding: 80px 0px;
+  color: white;
+  text-align: center;
+
+  .tf-title{
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .tf-message{
+    font-size: 24px;
+    width: 50%;
+    margin-left: 25%;
+    font-weight: 400;
+  }
+
+  .container{
+    overflow: hidden;
+    margin-top: 40px;
+    display: block;
+    .c-country{
+      width: 50%;
+      float: left;
+      .c-loc-name{
+        color: $lighterGray;
+        font-weight: 700;
+        text-align: center;
+        font-size: 34px;
+      }
+      .c-loc-map{
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        position: relative;
+        width: 100%;
+        height: 260px;
+        &:before{
+          content: attr(data-number);
+          position: absolute;
+          margin: auto;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          font-size: 150px;
+          font-weight: 700;
+          color: $bgBlue;
+          display: block;
+          text-align: center;
+          width: 100%;
+          height: 200px;
+        }
+      }
+      .c-loc-time{
+        font-size: 34px;
+        color: $lighterGray;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+//itterator
+
+.itterator-frame{
+  width: 100%;
+  background-color: white;
+  overflow: hidden;
+  .carousel-control, .carousel-indicators{
+    display: none; //TODO: convert to custom control
+  }
+
+  .itt-currentFrame{
+    width: 33%;
+    height: 420px;
+    background-color: #222222;
+    float: left;
+  }
+  .itt-currentMessage{
+    width: 50%;
+    height: 420px;
+    background-color: white;
+    float: left;
+    .itt-padded{
+      padding: 20px;
+      text-align: left;
+      .itt-cm-sub-title{
+        color: #384A57;
+        font-weight: 700;
+        font-size: 18px;
+      }
+      .itt-cm-title{
+        color: #384A57;
+        font-size: 30px;
+        margin: 10px 0px 20px 0px;
+      }
+      .itt-cm-message{
+        color: #384A57;
+        font-size: 16px;
+        font-weight: 400;
+        width: 60%;
+      }
+    }
+  }
+  .itt-next-frames{
+    float: left;
+    width: 17%;
+    height: 420px;
+
+    .itt-next-single{
+      width: 100%;
+      height: 210px;
+      background-color: #333333;
+    }
+  }
+
+  .single-slide{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 210px;
+  }
+
+}
+
+
+
+//hire frame
+.hire-frame{
+  width: 100%;
+  background-color: #E4E6E7;
+  overflow: hidden;
+  padding: 80px 0px;
+
+  .center-buttons{
+
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+
+    .border-button{
+      border: solid 2px $lightBlue;
+      color: $lightBlue;
+      font-size: 24px;
+      display: inline-block;
+      padding: 18px 25px;
+      font-weight: 700;
+      text-align: center;
+      margin-right: 20px;
+    }
+    .go-to-hire{
+      background-color: $lightBlue;
+      text-align: center;
+      font-weight: 700;
+      padding: 20px 25px;
+      font-size: 24px;
+      color: white;
+      white-space: nowrap;
+      display: inline-block;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+//EmailFormFrame
+
+.email-frame{
+  width: 100%;
+  background-color: #E4E6E7;
+  overflow: hidden;
+
+  form{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    .form-split{
+      overflow: hidden;
+      .labeled-input{
+        width: 49%;
+        float: left;
+        &:nth-child(2){
+          margin-left: 2%;
+        }
+      }
+    }
+    .labeled-input{
+      width: 100%;
+      margin-bottom: 20px;
+      label{
+        font-weight: 700;
+        color: $bgBlue;
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      input, textarea{
+        border: solid 2px $darkerGray;
+        background-color: white;
+        padding: 10px 0px 10px 10px;
+        font-size: 18px;
+        border-radius: 5px;
+        width: 100%;
+        color: #333333;
+        &:focus{
+          outline: none;
+        }
+      }
+      textarea{
+        min-height: 200px;
+        resize:vertical;
+      }
+    }
+    button{
+      width: 100%;
+      border-radius: 5px;
+      background-color: $lightBlue;
+      color: white;
+      text-align: center;
+      border: none;
+      padding: 15px 0px;;
+      font-weight: 700;
+      font-size: 22px;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+
+.footer{
+  .f-nav{
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    height: auto;
+    .footer-logo{
+      height: $headerHeight;
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-size: auto 65%;
+      background-image: url('../images/3pg-logo-white.png');
+      float: left;
+      width: 120px;
+      display: block;
+      margin-left: 2%;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+    .f-button{
+      color: white;
+      text-align: center;
+      padding: 30px 14px;
+      font-weight: 700;
+      color: white;
+      float: left;
+      font-size: 16px;
+      box-shadow:inset 0px 0px 0 0 #E4E6E7;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+      &:hover{
+        box-shadow:inset 0px 5px 0 0 #E4E6E7;
+        text-decoration: none;
+      }
+    }
+    .legal-text{
+      font-size: 11px;
+      color: $darkerGray;
+      font-weight: 400;
+      padding: 34px 0px;
+      margin-left: 5px;
+    }
+  }
+
+  .social-set{
+    overflow: hidden;
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    display: inline-block;
+    height: 40px;
+    .ss-single{
+      background-position: center center;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      width: 40px;
+      height: 40px;
+      float: right;
+      margin: 0px 2px;
+      opacity: 1;
+      transition: opacity 0.3s;
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+
+  .itt-currentFrame.itt-currentFrame,
+  .itt-currentMessage.itt-currentMessage,
+  .imageGrid.imageGrid,
+  .c-country.c-country.c-country{
+    float: none;
+    width: 100%;
+  }
+  .c-country:nth-child(2){
+    margin-top: 30px;
+  }
+  .itt-currentMessage.itt-currentMessage{
+    height: auto;
+  }
+   .itt-next-frames.itt-next-frames{
+     float: none;
+     width: 100%;
+     height: 210px;
+     overflow: hidden;
+     .itt-next-single{
+       float: left;
+       width: 50%;
+     }
+   }
+
+   .email-frame.email-frame form{
+     width: 90%;
+     margin-left: 5%;
+   }
+
+}
+
+//

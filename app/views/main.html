@@ -1,0 +1,202 @@
+<div class="header">
+  <div class="content">
+    <a href="http://www.3pillarglobal.com" class="mainLogo"></a>
+    <div class="mainNav">
+      <div class="nav-button bordered-button"  ng-click="goToHash('messageForm')">GET IN TOUCH</div>
+      <div class="nav-button"  ng-click="goToHash('team')">TEAM</div>
+      <div class="nav-button" ng-click="goToHash('work')">WORK</div>
+      <div class="nav-button" ng-click="goToHash('overview')">OVERVIEW</div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="full-frame"  id="overview">
+    <div class="imageGrid ig-{{group.direction}}" ng-repeat="group in imageGroups">
+      <div class="ig-lg" style="background-image: url({{group.images[0]}});"></div>
+      <div class="ig-sm" style="background-image: url({{group.images[1]}});"></div>
+      <div class="ig-sm" style="background-image: url({{group.images[2]}});"></div>
+    </div>
+    <div class="jumboMessage">
+      <div class="container">
+        <div class="jm-sub-title">
+          Product Design at 3Pillar
+        </div>
+        <div class="jm-title">
+          We <span class="text-highlight">love great design</span>
+        </div>
+        <div class="jm-message">
+          A full lifecycle design thinking partner that rapidly validates ideas through deep testing and research
+        </div>
+        <div class="jm-button" ng-click="goToHash('messageForm')">GET IN TOUCH</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="text-frame" id="work">
+    <div class="tf-title">
+      Our Work
+    </div>
+    <div class="tf-message">
+      Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est.
+    </div>
+  </div>
+
+
+
+  <div class="itterator-frame">
+
+    <uib-carousel interval="8000" no-wrap="false"  no-pause="true" class="itt-currentFrame">
+        <uib-slide class="single-slide" ng-repeat="slide in sliders" style="background-image: url({{slide.image}});">
+        </uib-slide>
+    </uib-carousel>
+    <uib-carousel interval="8000" no-wrap="false"  no-pause="true" class="itt-currentMessage">
+        <uib-slide class="itt-padded" ng-repeat="slide in sliders">
+          <div class="itt-cm-sub-title">
+            {{slide.subtitle}}
+          </div>
+          <div class="itt-cm-title">
+            {{slide.title}}
+          </div>
+          <div class="itt-cm-message">
+            {{slide.message}}
+          </div>
+        </uib-slide>
+    </uib-carousel>
+    <div class="itt-next-frames">
+      <uib-carousel interval="8000" no-wrap="false"  no-pause="true" class="itt-next-single">
+          <uib-slide class="single-slide" ng-repeat="slide2 in sliders2" style="background-image: url({{slide2.image}});">
+          </uib-slide>
+      </uib-carousel>
+      <uib-carousel interval="8000" no-wrap="false"  no-pause="true" class="itt-next-single">
+          <uib-slide class="single-slide" ng-repeat="slide3 in sliders3" style="background-image: url({{slide3.image}});">
+          </uib-slide>
+      </uib-carousel>
+    </div>
+  </div>
+  <div class="hire-frame">
+    <div class="center-buttons">
+      <div class="go-to-hire" ng-click="goToHash('messageForm')">
+        START YOUR PROJECT TODAY
+      </div>
+    </div>
+  </div>
+
+
+  <div class="text-frame" id="team">
+    <div class="tf-title">
+      Our Team
+    </div>
+    <div class="tf-message">
+      Two great teams who are literally always working for you, regardless of the time of day. We are continually progressing your work forward.
+    </div>
+
+    <div class="container">
+      <div class="c-country">
+        <div class="c-loc-name">
+          FAIRFAX, VA
+        </div>
+        <div class="c-loc-map" style="background-image: url(../images/map-usa.png)" data-number="6"></div>
+        <div class="c-loc-time">
+          {{currentTime(0)}}
+        </div>
+      </div>
+      <div class="c-country">
+        <div class="c-loc-name">
+          CLUJ, ROMANIA
+        </div>
+        <div class="c-loc-map" style="background-image: url(../images/map-rom.png)" data-number="7"></div>
+        <div class="c-loc-time">
+          {{currentTime(1)}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="full-frame">
+    <div class="imageGrid ig-{{group.direction}}" ng-repeat="group in imageGroups">
+      <div class="ig-lg hover-info" style="background-image: url({{group.images[0]}});"></div>
+      <div class="ig-sm hover-info" style="background-image: url({{group.images[1]}});"></div>
+      <div class="ig-sm hover-info" style="background-image: url({{group.images[2]}});"></div>
+    </div>
+  </div>
+  <div class="hire-frame">
+    <div class="center-buttons">
+      <div class="border-button">
+        WE'RE HIRING
+      </div>
+      <div class="go-to-hire"  ng-click="goToHash('messageForm')">
+        START A CONVERSATION
+      </div>
+    </div>
+  </div>
+
+
+  <div class="text-frame">
+    <div class="tf-title">
+      Get In Touch
+    </div>
+    <div class="tf-message">
+      Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est.
+    </div>
+  </div>
+
+
+  <div class="email-frame">
+    <form id="messageForm">
+      <div class="form-split">
+        <div class="labeled-input">
+          <label for="firstName">First Name (required)</label><br/>
+          <input id="firstName" type="text" required/>
+        </div>
+        <div class="labeled-input">
+          <label for="lastName">Last Name</label><br/>
+          <input id="lastName" type="text"/>
+        </div>
+      </div>
+      <div class="labeled-input">
+        <label for="email">Email (required)</label><br/>
+        <input id="email" type="email" required/>
+      </div>
+      <div class="labeled-input">
+        <label for="cname">Company Name</label><br/>
+        <input id="cname" type="text" required/>
+      </div>
+
+      <div class="labeled-input">
+        <label for="email">Message</label><br/>
+        <textarea required></textarea>
+      </div>
+      <button type="submit">SUBMIT YOUR RESPONSE</button>
+    </form>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="content">
+    <div class="f-nav">
+      <a href="http://www.3pillarglobal.com" target="_blank" class="footer-logo"></a>
+      <a href="http://www.3pillarglobal.com" target="_blank" class="f-button">DESIGN</a>
+      <a href="http://www.3pillarglobal.com" target="_blank" class="f-button">CAREERS</a>
+      <a href="http://www.3pillarglobal.com" target="_blank" class="f-button">LABS</a>
+      <a href="http://www.3pillarglobal.com" target="_blank" class="f-button">LEGAL</a>
+      <div class="legal-text">
+        2015 3Pillar Global Inc. All Rights Reserved.
+      </div>
+    </div>
+    <div class="social-set">
+      <a class="ss-single" href="#" style="background-image: url(../images/social-facebook.png);"></a>
+      <a class="ss-single" href="#" style="background-image: url(../images/social-youtube.png);"></a>
+      <a class="ss-single" href="#" style="background-image: url(../images/social-vimeo.png);"></a>
+      <a class="ss-single" href="#" style="background-image: url(../images/social-twitter.png);"></a>
+      <a class="ss-single" href="#" style="background-image: url(../images/social-m.png);"></a>
+      <a class="ss-single" href="#" style="background-image: url(../images/social-dribbble.png);"></a>
+    </div>
+  </div>
+</div>
